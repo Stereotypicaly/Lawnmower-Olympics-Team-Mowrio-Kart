@@ -1,0 +1,11 @@
+services:
+  ros2:
+    build: .
+    image: mowrio-kart:humble
+    container_name: mowrio_kart
+    network_mode: host
+    privileged: true
+    volumes:
+      - ./ros2_ws/src:/home/ubuntu/ros2_ws/src
+      - /dev:/dev
+    command: sleep infinity
