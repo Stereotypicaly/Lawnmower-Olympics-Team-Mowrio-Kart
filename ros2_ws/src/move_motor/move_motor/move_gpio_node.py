@@ -57,7 +57,7 @@ class MotorGpioNode(Node):
         
         
         left = linear - angular * self.wheel_base / 2
-        right = linear + angular * self.wheel_base / 2
+        right = -(linear + angular * self.wheel_base / 2)
         
         self.set_wheel(MOTOR_IN1_L, MOTOR_IN2_L, self.pwm_l, left)
         self.set_wheel(MOTOR_IN1_R, MOTOR_IN2_R, self.pwm_r, right)
