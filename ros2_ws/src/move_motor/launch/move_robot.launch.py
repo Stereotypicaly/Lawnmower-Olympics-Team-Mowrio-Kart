@@ -13,7 +13,7 @@ def generate_launch_description():
 
     # gap_params = os.path.join(movement_dir, 'config', 'gap_params.yaml')
     # use the slam map 
-    wheel_node = Node(
+    gpio_node = Node(
         package='move_motor',
         executable='move_gpio_node',
         name='move_gpio_node',
