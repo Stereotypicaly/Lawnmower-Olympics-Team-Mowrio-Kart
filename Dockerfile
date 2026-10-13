@@ -13,7 +13,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-colcon-common-extensions \
     sudo \
+    swig \
+    liblgpio-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Pi 5 compatible drop-in for RPi.GPIO
+RUN pip3 install --no-cache-dir rpi-lgpio
 
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
     && useradd --uid ${USER_UID} --gid ${USER_GID} -m -s /bin/bash ${USERNAME} \

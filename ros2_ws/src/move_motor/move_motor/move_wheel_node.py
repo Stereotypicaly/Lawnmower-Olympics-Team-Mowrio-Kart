@@ -4,6 +4,7 @@ from geometry_msgs.msg import Twist
 
 class MotorNode(Node):
     def __init__(self):
+        super().__init__('move_wheel_node')
         self.speed = 1.0 # m/s
         self.angle = 0.0 # rad/s
         
