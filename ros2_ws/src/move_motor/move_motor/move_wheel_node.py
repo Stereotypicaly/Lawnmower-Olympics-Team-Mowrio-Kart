@@ -5,7 +5,7 @@ from geometry_msgs.msg import Twist
 class MotorNode(Node):
     def __init__(self):
         super().__init__('move_wheel_node')
-        self.speed = 1.0 # m/s
+        self.speed = 0.5 # m/s
         self.angle = 0.0 # rad/s
         
         self.drive_pub = self.create_publisher(Twist, '/cmd_vel', 10)
