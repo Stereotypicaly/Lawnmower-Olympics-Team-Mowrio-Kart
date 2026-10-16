@@ -15,7 +15,8 @@ class MotorNode(Node):
         msg = Twist()
         msg.linear.x = self.speed
         msg.angular.z = self.angle
-        self.drive_pub.publish(msg)
+
+        #self.drive_pub.publish(msg)
         
 def main(args=None):
     rclpy.init(args=args)
