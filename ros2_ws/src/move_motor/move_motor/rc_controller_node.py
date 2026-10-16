@@ -27,8 +27,8 @@ class RCControllerNode(Node):
         self.rcThrottle = 0.0 
         self.rcSteering = 0.0
 
-        self.max_linear_speed = 0.5 #m/s
-        self.max_angular_speed = 1.0 #rad/s or ~57 deg/s
+        self.max_linear_speed = 3 #m/s
+        self.max_angular_speed = 5.0 #rad/s or ~57 deg/s
 
         #setup arduino serial connection
         try:
