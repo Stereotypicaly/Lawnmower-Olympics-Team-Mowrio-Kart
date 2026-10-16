@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Pi 5 compatible drop-in for RPi.GPIO
-RUN pip3 install --no-cache-dir rpi-lgpio
+RUN pip3 install --no-cache-dir rpi-lgpio pyserial
 
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
     && useradd --uid ${USER_UID} --gid ${USER_GID} -m -s /bin/bash ${USERNAME} \

@@ -31,6 +31,15 @@ def generate_launch_description():
         # parameters=[gap_params],
     )
 
+    controller_node = Node(
+        package='move_motor',
+        executable='rc_controller_node',
+        name='rc_controller_node',
+        output='screen',
+        emulate_tty=True,
+        # parameters=[gap_params],
+    )
+
     return LaunchDescription([
-        gpio_node, wheel_node
+        gpio_node, wheel_node, controller_node
     ])
