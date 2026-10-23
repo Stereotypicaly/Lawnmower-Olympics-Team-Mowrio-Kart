@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     sudo \
     swig \
     liblgpio-dev \
+    ros-humble-foxglove-bridge \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Pi 5 compatible drop-in for RPi.GPIO

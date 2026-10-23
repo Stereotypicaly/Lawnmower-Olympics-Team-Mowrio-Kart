@@ -3,6 +3,7 @@ services:
     build: .
     image: mowrio-kart:humble
     container_name: mowrio_kart
+    restart: unless-stopped
     network_mode: host
     privileged: true
     group_add:
