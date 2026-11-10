@@ -7,11 +7,8 @@ from nav_msgs.msg import Odometry
 from tf2_ros import TransformBroadcaster
 
 class OdomNode(Node):
-    
-    super().__init__('odom_node')
-    
-    
     def __init__(self):
+        super().__init__('odom_node')
         self.x = 0.0
         self.y = 0.0
         self.yaw = 0.0
