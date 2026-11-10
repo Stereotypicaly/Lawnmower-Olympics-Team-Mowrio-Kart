@@ -16,6 +16,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     swig \
     liblgpio-dev \
     ros-humble-foxglove-bridge \
+    ros-humble-slam-toolbox \
+    ros-humble-nav2-bringup \
+    ros-humble-rviz2 \
+    ros-humble-rmw-cyclonedds-cpp \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Pi 5 compatible drop-in for RPi.GPIO
@@ -28,6 +32,8 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}/ros2_ws
+
+ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc \
     && echo "[ -f /home/${USERNAME}/ros2_ws/install/setup.bash ] && source /home/${USERNAME}/ros2_ws/install/setup.bash" >> ~/.bashrc

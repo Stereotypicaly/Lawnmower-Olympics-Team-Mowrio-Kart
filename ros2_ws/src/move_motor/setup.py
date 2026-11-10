@@ -30,6 +30,7 @@ setup(
 		'move_gpio_node = move_motor.move_gpio_node:main',
         'move_wheel_node = move_motor.move_wheel_node:main',
         'rc_controller_node = move_motor.rc_controller_node:main',
+        'odom_node = move_motor.odom_node:main',
         ],
     },
 )
