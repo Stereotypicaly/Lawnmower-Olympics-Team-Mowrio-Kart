@@ -26,6 +26,13 @@ def generate_launch_description():
         arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser'],
     )
 
+    # slam_toolbox's default config tracks base_footprint, not base_link
+    footprint_tf = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'base_footprint'],
+    )
+
     # launch the odom
     odom = Node(
         package='move_motor',
@@ -41,4 +48,4 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': 'false'}.items(),
     )
 
-    return LaunchDescription([lidar, laser_tf, odom, slam])
+    return LaunchDescription([lidar, laser_tf, footprint_tf, odom, slam])
